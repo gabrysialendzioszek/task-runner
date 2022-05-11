@@ -1,0 +1,31 @@
+{
+  "name": "task-runner",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "init-project": "npm install && npm-run-all init:*",
+    "init:dirs":"mkdirp sass css vendor images js",
+    "init:files":"touch README.md index.html sass/style.scss js/script.js",
+    "init:gitignore": "curl https://raw.githubusercontent.com/github/gitignore/master/Node.gitignore -o .gitignore",
+    "test": "npm run test:html",
+    "test:html": "html-validate *.html",
+    "build:sass": "sass --style+compressed --no-source-map sass:css",
+    "build:autoprefixer": "postcss css/*.css --use autoprefixer -d css",
+    "build": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gabrysialendzioszek/task-runner.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gabrysialendzioszek/task-runner/issues"
+  },
+  "homepage": "https://github.com/gabrysialendzioszek/task-runner#readme",
+  "devDependencies": {
+    "mkdirp": "^1.0.4"
+  }
+}
